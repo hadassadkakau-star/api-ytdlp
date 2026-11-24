@@ -44,7 +44,7 @@ def play(query: str, request: Request):
         "noplaylist": True,
         "quiet": True,
         "extractor_args": {
-    "youtube-bgutilscript": {
+    "youtubepot-bgutilscript": {
         "server_home": [
             "/root/bgutil-ytdlp-pot-provider/server"
         ]
