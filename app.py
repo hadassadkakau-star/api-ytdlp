@@ -49,7 +49,7 @@ def play(query: str, request: Request):
             "/root/bgutil-ytdlp-pot-provider/server"
         ]
     }
-},,
+},
         "postprocessors": [{
             "key": "FFmpegExtractAudio",
             "preferredcodec": "mp3",
