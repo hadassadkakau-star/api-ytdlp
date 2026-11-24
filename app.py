@@ -6,7 +6,7 @@ import glob
 import shutil
 import threading
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from yt_dlp import YoutubeDL
 
@@ -34,7 +34,7 @@ def health():
 
 
 @app.get("/play")
-def play(query: str):
+def play(query: str, request: Request):
     if not query.strip():
         raise HTTPException(400, "Digite o nome da música")
 
@@ -87,7 +87,7 @@ def play(query: str):
                 },
                 "total_duration_in_seconds": video.get("duration", 0),
                 "thumbnail": video.get("thumbnail", ""),
-                "url": "/files/" + file_id
+                "url": str(request.base_url).rstrip("/") + "/files/" + file_id
             }
 
     except HTTPException:
