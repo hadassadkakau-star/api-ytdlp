@@ -43,7 +43,13 @@ def play(query: str, request: Request):
         "outtmpl": os.path.join(DOWNLOAD_DIR, "%(id)s.%(ext)s"),
         "noplaylist": True,
         "quiet": True,
-        "no_warnings": True,
+        "extractor_args": {
+    "youtube-bgutilscript": {
+        "server_home": [
+            "/root/bgutil-ytdlp-pot-provider/server"
+        ]
+    }
+},,
         "postprocessors": [{
             "key": "FFmpegExtractAudio",
             "preferredcodec": "mp3",
