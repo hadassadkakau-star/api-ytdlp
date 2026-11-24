@@ -38,6 +38,11 @@ def play(query: str, request: Request):
     if not query.strip():
         raise HTTPException(400, "Digite o nome da música")
 
+    shutil.copyfile(
+        "/etc/secrets/cookies.txt",
+        "/tmp/cookies.txt"
+    )
+
     options = {
         "cookiefile": "/tmp/cookies.txt",
         "format": "bestaudio/best",
