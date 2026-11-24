@@ -39,6 +39,7 @@ def play(query: str, request: Request):
         raise HTTPException(400, "Digite o nome da música")
 
     options = {
+        "cookiefile": "/etc/secrets/cookies.txt",
         "format": "bestaudio/best",
         "outtmpl": os.path.join(DOWNLOAD_DIR, "%(id)s.%(ext)s"),
         "noplaylist": True,
