@@ -1,7 +1,7 @@
 
 FROM node:22-bookworm-slim AS pot-provider
 
-RUN apt-get update && apt-get install -y --no-install-recommends git
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git && update-ca-certificates && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
 
