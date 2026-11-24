@@ -45,10 +45,13 @@ def play(query: str, request: Request):
 
     options = {
         "cookiefile": "/tmp/cookies.txt",
-        "format": "bestaudio",
+        "format": "bestaudio/best",
         "outtmpl": os.path.join(DOWNLOAD_DIR, "%(id)s.%(ext)s"),
         "noplaylist": True,
         "quiet": True,
+        "js_runtimes": {
+    "node": {}
+},
         "extractor_args": {
     "youtubepot-bgutilscript": {
         "server_home": [
