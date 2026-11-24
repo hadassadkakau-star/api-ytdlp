@@ -45,7 +45,7 @@ def play(query: str, request: Request):
 
     options = {
         "cookiefile": "/tmp/cookies.txt",
-        "format": "bestaudio/best",
+        "format": "bestaudio",
         "outtmpl": os.path.join(DOWNLOAD_DIR, "%(id)s.%(ext)s"),
         "noplaylist": True,
         "quiet": True,
