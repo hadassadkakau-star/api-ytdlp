@@ -28,4 +28,6 @@ COPY . .
 
 EXPOSE 10000
 
+EXPOSE 10000
+
 CMD ["sh", "-c", "node /root/bgutil-ytdlp-pot-provider/server/build/main.js --host 127.0.0.1 & exec uvicorn app:app --host 0.0.0.0 --port 10000"]
