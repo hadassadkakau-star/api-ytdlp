@@ -43,7 +43,7 @@ def play(query: str, request: Request):
         "/tmp/cookies.txt"
     )
 
-    options = {
+        options = {
         "cookiefile": "/tmp/cookies.txt",
         "format": "bestaudio/best",
         "verbose": True,
@@ -51,22 +51,19 @@ def play(query: str, request: Request):
         "noplaylist": True,
         "quiet": True,
         "js_runtimes": {
-    "node": {}
-},
+            "node": {}
+        },
         "extractor_args": {
-    "youtubepot-bgutilhttp": {
-        "base_url": "http://127.0.0.1:4416"
-    }
-},
-        ]
-    }
-},
+            "youtubepot-bgutilhttp": {
+                "base_url": "http://127.0.0.1:4416"
+            }
+        },
         "postprocessors": [{
             "key": "FFmpegExtractAudio",
             "preferredcodec": "mp3",
             "preferredquality": "128",
         }],
-    }
+        }
 
     try:
         with YoutubeDL(options) as ydl:
