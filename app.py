@@ -2,7 +2,6 @@
 import os
 import uuid
 import time
-import glob
 import shutil
 import threading
 
@@ -43,7 +42,7 @@ def play(query: str, request: Request):
         "/tmp/cookies.txt"
     )
 
-        options = {
+    options = {
         "cookiefile": "/tmp/cookies.txt",
         "format": "bestaudio/best",
         "verbose": True,
@@ -63,7 +62,7 @@ def play(query: str, request: Request):
             "preferredcodec": "mp3",
             "preferredquality": "128",
         }],
-        }
+    }
 
     try:
         with YoutubeDL(options) as ydl:
@@ -130,5 +129,4 @@ def get_file(file_id: str):
         item["path"],
         media_type="audio/mpeg",
         filename="musica.mp3"
-          )
-  
+    )
