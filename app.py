@@ -54,9 +54,10 @@ def play(query: str, request: Request):
     "node": {}
 },
         "extractor_args": {
-    "youtubepot-bgutilscript": {
-        "server_home": [
-            "/root/bgutil-ytdlp-pot-provider/server"
+    "youtubepot-bgutilhttp": {
+        "base_url": "http://127.0.0.1:4416"
+    }
+},
         ]
     }
 },
